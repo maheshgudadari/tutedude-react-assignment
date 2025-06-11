@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Greeting  from './component/Greeting';
+import Counter from './component/Counter';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -20,6 +21,7 @@ function App() {
         <Greeting/>
         }
       </header>
+      <Counter count="0"/>
     </div>
   );
 }
