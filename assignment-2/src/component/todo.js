@@ -1,35 +1,37 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 
 class Todo extends Component {
-    state = [{
+    state ={
         taskText: '',
-        tasksList: "",
-        isDone: ''
+        tasksList: [],
+        isDone: true
     }
-    ]
     constructor(props) {
         super(props);
+       
     }
 
     //  const [task, setTask] = useState(" ");
     task = "";
-    setTask(e) {
-        this.task = e;
-    }
+   
 
-    // ItemList=[];
-
-    addItem = (e) => {
-        alert("Item added ", e);
-    }
     render() {
         return <>
             <h2>Hi, I am Todo Component</h2>
-            <input type="text" value={this.state.taskText} onChange={this.handleChange.bind(this)} />
-            <button onClick={() => this.addItem(this)} > add </button>
+            <input type="text" 
+            value={this.state.taskText} 
+            name="task" 
+            onChange={this.handleChange.bind(this)} />
+            <button onClick={this.addItem.bind(this)}> add </button>
+        
+         <ul>
+            
+          {this.state?.tasksList?.map((data, key) => (
+            <li key={key}>{data}</li>
+          ))}
+        </ul>
         </>
-
 
     }
 
@@ -39,7 +41,20 @@ handleChange(e){
         taskText:e.target.value,
     })
 }
+
+addItem(e){
+    if (!this.state.taskText?.length) {
+      return;
+    } 
+    this.setState({
+      taskText: "",
+      tasksList: [...this.state.tasksList, this.state.taskText],
+      isDone: false
+    });
+  }
+
 }
+
 
 export default Todo;
 
