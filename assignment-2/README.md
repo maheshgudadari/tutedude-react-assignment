@@ -1,3 +1,7 @@
+### Assignment -2
+[project link Deploy Link](https://singular-alpaca-372d20.netlify.app/)
+# The goal of this assignment is to create a basic To-Do application using React. The app will allow users to add tasks to a list, manage the state of these tasks, and ensure a dynamic user interface.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
